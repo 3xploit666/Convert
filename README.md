@@ -18,3 +18,11 @@ Verificación de Integridad: Se genera un hash SHA256 del archivo cifrado para v
 <p align="center">
   <img src="/assets/poc.png">
 </p>
+
+
+
+## Loader ps1
+
+<p align="center">
+  <img src="/assets/loader.png">
+</p>
