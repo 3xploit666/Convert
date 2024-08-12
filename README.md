@@ -13,3 +13,8 @@ Cifrado XOR Dinámico: Cada byte del archivo se cifra utilizando una clave XOR q
 Ofuscación Personalizada: Se reemplazan ciertos valores hexadecimales con símbolos personalizados (♘, ♟, ♜) para complicar la detección mediante análisis estático.
 Generación de Scripts PowerShell: El script PowerShell generado descifra y ejecuta el archivo en memoria.
 Verificación de Integridad: Se genera un hash SHA256 del archivo cifrado para verificar la integridad de los datos.
+
+
+<p align="center">
+  <img src="/assets/poc.png">
+</p>
