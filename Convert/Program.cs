@@ -1,14 +1,30 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
+
+//3xploit666 12/08/2024
 class Program
 {
+
     static void Main(string[] args)
     {
+        string banner = @"
+╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮╱╭━╮╱╭╮╱╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮
+┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱╭╯╰╮┃┃╰╮┃┃╱╭╯╰╮╱╱╱╱╱╱╱╱╱╱╭╯┃
+┃┃╱╰╋━━┳━╮╭╮╭┳━━┳┻╮╭╯┃╭╮╰╯┣━┻╮╭╯╱╱╱╱╭━━┳━━╋╮┃
+┃┃╱╭┫╭╮┃╭╮┫╰╯┃┃━┫╭┫┃╱┃┃╰╮┃┃┃━┫┃╱╭━━╮┃╭╮┃━━┫┃┃
+┃╰━╯┃╰╯┃┃┃┣╮╭┫┃━┫┃┃╰╮┃┃╱┃┃┃┃━┫╰╮╰━━╯┃╰╯┣━━┣╯╰╮
+╰━━━┻━━┻╯╰╯╰╯╰━━┻╯╰━╯╰╯╱╰━┻━━┻━╯╱╱╱╱┃╭━┻━━┻━━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰╯";
+
+
         if (args.Length < 1 || args.Length > 2)
         {
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.WriteLine(banner);
             Console.WriteLine("Uso: Converter.exe <ruta_al_archivo> [-v]");
             return;
         }
@@ -46,16 +62,7 @@ class Program
             Console.WriteLine("Hash SHA256 del archivo ofuscado: " + hashString);
         }
 
-        string banner = @"
-╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮╱╭━╮╱╭╮╱╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╭╮
-┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱╭╯╰╮┃┃╰╮┃┃╱╭╯╰╮╱╱╱╱╱╱╱╱╱╱╭╯┃
-┃┃╱╰╋━━┳━╮╭╮╭┳━━┳┻╮╭╯┃╭╮╰╯┣━┻╮╭╯╱╱╱╱╭━━┳━━╋╮┃
-┃┃╱╭┫╭╮┃╭╮┫╰╯┃┃━┫╭┫┃╱┃┃╰╮┃┃┃━┫┃╱╭━━╮┃╭╮┃━━┫┃┃
-┃╰━╯┃╰╯┃┃┃┣╮╭┫┃━┫┃┃╰╮┃┃╱┃┃┃┃━┫╰╮╰━━╯┃╰╯┣━━┣╯╰╮
-╰━━━┻━━┻╯╰╯╰╯╰━━┻╯╰━╯╰╯╱╰━┻━━┻━╯╱╱╱╱┃╭━┻━━┻━━╯
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃┃
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰╯";
-
+  
         // Convertir a string en PowerShell con ofuscación personalizada
         StringBuilder psArray = new StringBuilder();
         psArray.Append("[string[]] $bytes = @(");
@@ -82,7 +89,6 @@ class Program
         using (StreamWriter writer = new StreamWriter(psScriptFilePath, false, Encoding.UTF8))
         {
             writer.WriteLine("# Script PowerShell generado automáticamente");
-            writer.WriteLine(banner);
             writer.WriteLine();
             writer.WriteLine(psArray.ToString());
             writer.WriteLine();
