@@ -4,6 +4,7 @@
 <p align="center">
   <img src="/assets/banner.jpg">
 </p>
+
 ## Descripción del Proyecto
 Este proyecto implementa un cifrado basado en XOR con una clave dinámica y una opción de ofuscación personalizada. El objetivo es cifrar un archivo binario o ejecutable y generar un script PowerShell que descifre y ejecute el archivo en memoria. Este enfoque mejora la seguridad al evitar que el archivo descifrado se escriba en el disco, dificultando la ingeniería inversa y la detección estática.
 Características
